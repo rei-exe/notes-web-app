@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class CrudController extends Controller
 {
-    public function Create(){
-        return view('create');
+    public function Create(Request $request){
+        $create = $request->create('');
+        return view('xriber', ['create'=>$create]);
     }
 
     public function Read(){
