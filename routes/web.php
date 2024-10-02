@@ -8,3 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/xriber', [NoteController::class, 'showAllNotes']);
+
+Route::get('/home', function(){
+    return view('home');
+});
