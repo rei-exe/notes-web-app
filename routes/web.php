@@ -13,11 +13,11 @@ Route::get('/', function () {
 //     return view('home');
 // });
 // //=======
-// Route::get('/notes', [NoteController::class, 'ShowAllNotes']); 
-// Route::get('/notes/create', [NoteController::class, 'Create']);
-// Route::post('/notes', [NoteController::class, 'Store']); 
-// Route::get('/notes/{id}', [NoteController::class, 'Show']);
-// Route::get('/notes/{id}/edit', [NoteController::class, 'Edit']);
-// Route::put('/notes/{id}', [NoteController::class, 'Update']); 
-// Route::delete('/notes/{id}', [NoteController::class, 'Destroy']);
-// // >>>>>>> ec7d87da0e4386d49002693765bc1304034b419d
+Route::get('/notes', [NoteController::class, 'ShowAllNotesController']); 
+Route::get('/notes/create', [NoteController::class, 'CreateNotesController']);
+Route::post('/notes', [NoteController::class, 'StoreNotesController']); 
+Route::get('/notes/{id}', [NoteController::class, 'ShowANoteController']);
+Route::get('/notes/{id}/edit', [NoteController::class, 'EditNoteController']);
+Route::put('/notes/{id}', [NoteController::class, 'UpdateNoteController']); 
+Route::delete('/notes/{id}', [NoteController::class, 'DestroyNoteController']);
+// >>>>>>> ec7d87da0e4386d49002693765bc1304034b419d
