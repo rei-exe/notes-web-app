@@ -21,11 +21,12 @@
             margin-bottom: 5px; 
         }
         input, textarea {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             border: 1px solid #dee2e6;
             border-radius: 5px;
             font-size: 1rem;
+            text-align: center; 
         }
         button {
             background-color: #007bff;
