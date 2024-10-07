@@ -33,8 +33,8 @@
         <h1> Note Application</h1>
         <nav>
             <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contributors</a></li>
+                <li><a href="http://127.0.0.1:8000/home/about">About</a></li>
+                <li><a href="http://127.0.0.1:8000/home/contributors">Contributors</a></li>
             </ul>
         </nav>
     </header>
@@ -43,7 +43,7 @@
     <nav>
         <ul>
             <div class="container">
-                <li><a href="#">Create New Notes</a></li>
+                <li><a href="http://127.0.0.1:8000/notes">Create New Notes</a></li>
                 <li><a href="#"></a></li>
                 <li></li>
             </div>
