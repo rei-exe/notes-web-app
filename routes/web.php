@@ -2,14 +2,13 @@
 
 use App\Http\Controllers\NoteController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\showAllNotes;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 // <<<<<<< HEAD
-Route::get('/xriber', [NoteController::class, 'showAllNotes']);
-
 Route::get('/home', function(){
     return view('home');
 });
