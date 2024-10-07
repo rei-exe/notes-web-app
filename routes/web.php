@@ -9,6 +9,12 @@ Route::get('/', function () {
 Route::get('/home', function(){
     return view('home');
 });
+Route::get('/home/contributors', function(){
+    return view('contributors');
+});
+Route::get('/home/about', function(){
+    return view('about');
+});
 Route::get('/notes', [NoteController::class, 'showAllNotes']); 
 Route::get('/notes/create', [NoteController::class, 'create']);
 Route::post('/notes', [NoteController::class, 'store']); 
