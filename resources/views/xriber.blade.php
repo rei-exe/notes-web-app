@@ -87,7 +87,7 @@
             margin: 10px;
             padding: 5px;
             display: inline-block;
-            background-color: lightsteelblue;
+            background-color: darkslateblue;
         }
     </style>
 </head>
