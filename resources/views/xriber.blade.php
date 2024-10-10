@@ -83,13 +83,13 @@
             cursor: pointer;
         }
         .panels {
-            border-style: solid;
+            border-style: dashed;
             width: 20%;
             height: 300px;
             margin: 3%;
             padding: 5px;
             display: inline-block;
-            background-color: purple;
+            background-color: khaki;
         }
     </style>
 </head>
