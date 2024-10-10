@@ -6,6 +6,7 @@
     <title>Xriber</title>
     <style>
         body {
+            justify-content: center;
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
@@ -21,12 +22,14 @@
         .logo {
             font-size: 24px;
             font-weight: bold;
-            margin: 0;
+            margin: 10px;
+            padding-left: 10px;
         }
         .tagline {
             font-size: 16px;
             color: #6c757d;
-            margin: 0;
+            margin: 10px;
+            padding-left: 10px;
         }
         .button-container {
             margin-top: 20px;
@@ -70,8 +73,13 @@
             color: #155724;
         }
         .alert-warning {
-            background-color: #fff3cd;
-            color: #856404;
+            color: #494646;
+            text-shadow: 1px 1px #494646; /* Slightly offset to create shadow effect */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
         }
         .btn-info {
             background-color: #17a2b8;
