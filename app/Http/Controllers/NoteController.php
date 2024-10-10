@@ -15,7 +15,7 @@ class NoteController extends Controller
     }
 
     # create note
-    public function create()
+    public function Create()
     {
         return view('create'); 
     }
@@ -23,7 +23,7 @@ class NoteController extends Controller
     # save note
     public function store(Request $request)
     {
-        # validation
+       #validation
         $request->validate([
             'title' => 'required|max:100',
             'description' => 'nullable|max:500',
@@ -36,21 +36,21 @@ class NoteController extends Controller
     }
 
     # show a note
-    public function show($id)
+    public function Read($id)
     {
         $note = Note::findOrFail($id); # fetch notes
         return view('view', compact('note')); # return a note
     }
 
     # edit note
-    public function edit($id)
+    public function Edit($id)
     {
         $note = Note::findOrFail($id); # fetch for editing
         return view('edit', compact('note')); # return edit view
     }
 
     # save edited note
-    public function update(Request $request, $id)
+    public function Update(Request $request, $id)
     {
         # validation
         $request->validate([
@@ -66,7 +66,7 @@ class NoteController extends Controller
     }
 
     # delete note
-    public function destroy($id)
+    public function Delete($id)
     {
         $note = Note::findOrFail($id); # fetch note
         $note->delete(); # delete note
