@@ -34,7 +34,7 @@
         .custom-button:hover {
             background-color: #0056b3; 
         }
-        table {
+        /* table {
             width: 100%;
             margin-top: 20px;
             border-collapse: collapse;
@@ -43,7 +43,7 @@
             border: 1px solid #dee2e6;
             padding: 8px;
             text-align: left;
-        }
+        } */
         .alert {
             margin-top: 20px;
             padding: 10px;
@@ -81,6 +81,14 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        .panels {
+            border-style: solid;
+            width: 20%;
+            margin: 10px;
+            padding: 5px;
+            display: inline-block;
+            background-color: lightsteelblue;
+        }
     </style>
 </head>
 <body>
@@ -104,7 +112,27 @@
                 No notes available.
             </div>
         @else
-            <table>
+            
+            @foreach ($notes as $note)
+                <div class= "panels">
+                    <h4>Title:</h4>
+                    <h7>{{$note->title}}</h7>
+                    <h4>Description:</h4>
+                    <h7>{{ Str::limit($note->description, 50) }}</h7>
+                    <h4>Actions:</h4>
+                    <h7>
+                        <a href="/notes/{{ $note->id }}" class="btn-info">View</a>
+                        <a href="/notes/{{ $note->id }}/edit" class="btn-warning">Edit</a>
+                        <form action="/notes/{{ $note->id }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-danger">Delete</button>
+                        </form>
+                    </h7>
+                </div>
+            @endforeach
+            
+            <!-- <table>
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -129,7 +157,7 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>
+            </table> -->
         @endif
     </div>
 </body>
