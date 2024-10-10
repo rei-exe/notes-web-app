@@ -8,6 +8,14 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-image: url({{asset("/images/paper.png")}});
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .container{
+            margin: 10%;
+            height: 50%;
+
         }
         h1 {
             font-size: 2.5rem; 
@@ -21,12 +29,13 @@
             margin-bottom: 5px; 
         }
         input, textarea {
-            width: 90%;
+            width: 50%;
             padding: 10px;
-            border: 1px solid #dee2e6;
+            border: 3px solid #dee2e6;
             border-radius: 5px;
             font-size: 1rem;
             text-align: center; 
+            background-color: lightsalmon;
         }
         button {
             background-color: #007bff;
