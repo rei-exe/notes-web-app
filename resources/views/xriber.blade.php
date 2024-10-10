@@ -8,14 +8,23 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            background-color: #b8c1c9;
+        }
+        header{
+            padding: 10px;
+            background-color: rgb(54, 57, 56);
+            color: white;
+            text-align: center;
+            font-family: 'Arial Narrow Bold', sans-serif;
         }
         .logo {
-            font-size: 4rem;
+            font-size: 24px;
             font-weight: bold;
-            margin: 0; 
+            margin: 0;
         }
         .tagline {
-            font-size: 1.25rem; 
+            font-size: 16px;
             color: #6c757d;
             margin: 0;
         }
@@ -23,16 +32,23 @@
             margin-top: 20px;
         }
         .custom-button {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
             background-color: #007bff;
             color: white;
             padding: 10px 20px;
             border: none;
-            border-radius: 5px;
+            height: 50px;
+            width: 32px;
+            border-radius: 50px;
             cursor: pointer;
-            text-decoration: none; 
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
         }
         .custom-button:hover {
-            background-color: #0056b3; 
+            background-color: #0056b3;
         }
         table {
             width: 100%;
@@ -81,16 +97,23 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        .logo-container{
+            text-align: left;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="logo">xriber</h1>
-        <h2 class="tagline">scribe it so you won't forget it!</h2>
-
+        <header>
+            <div class="logo-container">
+                <h1 class="logo">xriber</h1>
+            <h2 class="tagline">scribe it so you won't forget it!</h2>
+            </div>
+        </header>
         <!-- Center the button -->
         <div class="button-container">
-            <a href="/notes/create" class="custom-button">Create New Xribe</a>
+            <a href="/notes/create" class="custom-button"></a>
         </div>
 
         @if (session('success'))
