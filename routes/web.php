@@ -8,9 +8,9 @@ Route::get('/', function () {
 });
 
 Route::get('/notes', [NoteController::class, 'showAllNotes']); 
-Route::get('/notes/create', [NoteController::class, 'create']);
+Route::get('/notes/create', [NoteController::class, 'Create']);
 Route::post('/notes', [NoteController::class, 'store']); 
-Route::get('/notes/{id}', [NoteController::class, 'show']);
-Route::get('/notes/{id}/edit', [NoteController::class, 'edit']);
-Route::put('/notes/{id}', [NoteController::class, 'update']); 
-Route::delete('/notes/{id}', [NoteController::class, 'destroy']);
+Route::get('/notes/{id}', [NoteController::class, 'Read']);
+Route::get('/notes/{id}/edit', [NoteController::class, 'Edit']);
+Route::put('/notes/{id}', [NoteController::class, 'Update']); 
+Route::delete('/notes/{id}', [NoteController::class, 'Delete']);

@@ -47,7 +47,7 @@
         <h1>Create a New Note</h1>
 
         <form action="/notes" method="POST">
-            @csrf <!-- csrf token -->
+            @csrf
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" name="title" required>
