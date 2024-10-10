@@ -8,6 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-color: goldenrod;
         }
         .logo {
             font-size: 4rem;
@@ -84,10 +85,11 @@
         .panels {
             border-style: solid;
             width: 20%;
-            margin: 10px;
+            height: 300px;
+            margin: 3%;
             padding: 5px;
             display: inline-block;
-            background-color: darkslateblue;
+            background-color: purple;
         }
     </style>
 </head>
