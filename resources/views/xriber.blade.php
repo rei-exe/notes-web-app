@@ -34,7 +34,7 @@
         .custom-button:hover {
             background-color: #0056b3; 
         }
-        table {
+        /* table {
             width: 100%;
             margin-top: 20px;
             border-collapse: collapse;
@@ -43,7 +43,7 @@
             border: 1px solid #dee2e6;
             padding: 8px;
             text-align: left;
-        }
+        } */
         .alert {
             margin-top: 20px;
             padding: 10px;
@@ -81,6 +81,15 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        div .note-lists{
+            text-align: left;
+            margin-top: 1%;
+            border-style: solid;
+            padding: 1%;
+        }
+        div .button-container{
+            margin-bottom:5%;
+        }
     </style>
 </head>
 <body>
@@ -104,15 +113,21 @@
                 No notes available.
             </div>
         @else
-            <table>
+            @foreach($notes as $note)
+                <div class="note-lists">
+                    <h4>{{$note->title}}</h4>
+                    <p>{{$note->content}}</p>
+                </div>
+            @endforeach
+            <!-- <table>
                 <thead>
                     <tr>
                         <th>Title</th>
                         <th>Description</th>
                         <th>Actions</th>
                     </tr>
-                </thead>
-                <tbody>
+                </thead> -->
+                <!-- <tbody>
                     @foreach ($notes as $note)
                         <tr>
                             <td>{{ $note->title }}</td>
@@ -128,8 +143,8 @@
                             </td>
                         </tr>
                     @endforeach
-                </tbody>
-            </table>
+                </tbody> -->
+            <!-- </table> -->
         @endif
     </div>
 </body>
