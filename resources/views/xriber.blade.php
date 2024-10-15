@@ -95,6 +95,9 @@
         div .button-container{
             margin-bottom:5%;
         }
+        .options{
+            align: right;
+        }
     </style>
 </head>
 <body>
@@ -122,6 +125,15 @@
                 <div class="note-lists">
                     <h4>{{$note->title}}</h4>
                     <p>{{$note->content}}</p>
+                </div>
+                <div class="options">
+                    <a href="/notes/{{ $note->id }}" class="btn-info">View</a>
+                    <a href="/notes/{{ $note->id }}/edit" class="btn-warning">Edit</a>
+                    <form action="/notes/{{ $note->id }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn-danger">Delete</button>
+                    </form>
                 </div>
             @endforeach
             <!-- <table>
