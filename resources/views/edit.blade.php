@@ -8,7 +8,16 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 20px;
+            background-size: 60%;
+            background-image: url("/images/paper.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 5px;
+
+        }
+        .container{
+            margin: 10%;
+            height: 50%;
         }
         h1 {
             font-size: 2.5rem; 
@@ -16,18 +25,23 @@
         }
         .form-group {
             margin: 20px 0; 
-            text-align: left; 
+            text-align: center; 
         }
         label {
             display: block; 
             margin-bottom: 5px; 
         }
         input, textarea {
-            width: 100%;
+            width: 50%;
             padding: 10px;
-            border: 1px solid #dee2e6;
+            border: 3px solid #dee2e6;
             border-radius: 5px;
             font-size: 1rem;
+            text-align: center; 
+            align: center;
+            max-width: 60%;
+            max-height: 240px;
+            
         }
         button {
             background-color: blue;
