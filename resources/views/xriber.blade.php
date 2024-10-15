@@ -8,6 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-color: burlywood;
         }
         .logo {
             font-size: 4rem;
@@ -86,6 +87,10 @@
             margin-top: 1%;
             border-style: solid;
             padding: 1%;
+            width: 95%;
+            /* background-color: #ffef96; */
+            background-image: linear-gradient(to bottom, #ffef96 10%, #eea29a);
+            
         }
         div .button-container{
             margin-bottom:5%;
