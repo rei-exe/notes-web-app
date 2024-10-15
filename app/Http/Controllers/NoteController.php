@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class NoteController extends Controller
 {
     # show all notes / landing page
+    #Hello
     public function showAllNotes()
     {
         $notes = Note::all(); # fetch notes from db
