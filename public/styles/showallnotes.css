@@ -47,7 +47,7 @@ body{
     color: white;
     background-color: #aeb0b3;
     border: 1px solid #ccc;
-    transition: border 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
 }
 
 .create-btn:hover{
@@ -78,7 +78,8 @@ body{
     margin: 10px 0 10px 0;
     align-items: center;
     background-color: #428dd9;
-    border: 1px solid #ccc;
+    border: 1px solid;
+    border-color: #ccc;
     border-radius: 5px;
     text-align: left;
     cursor: pointer;
@@ -88,13 +89,15 @@ body{
     overflow: hidden;    /*para di mag overflow yung content */
     white-space: nowrap; /*hide nya lng yung content na sobra */
     text-overflow: ellipsis; /*diko alam toh nakita ko lng yan sa stackoverflow */
-    transition: background-color 0.5s ease-in-out;
+    transition: border-color 0.5s ease-in-out;
 }
 
 .note-lists-buttons:hover{
     /* background-color: #e5e5f7; */
     /* opacity: 0.8;
     background-size: 20px 20px; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* horizontal-offset, vertical-offset, blur-radius, color */
+    border-color: #ffffff;
     background-image: linear-gradient(#444cf7, #6c573e 100%);
 }
 
