@@ -10,15 +10,15 @@
             text-align: center;
         }
         h1 {
-            font-size: 2.5rem; 
+            font-size: 2.5rem;
             margin: 20px 0;
         }
         .form-group {
             margin: 20px 0;
         }
         label {
-            display: block; 
-            margin-bottom: 5px; 
+            display: block;
+            margin-bottom: 5px;
         }
         input, textarea {
             width: 100%;
@@ -35,10 +35,10 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1rem;
-            margin-top: 20px; 
+            margin-top: 20px;
         }
         button:hover {
-            background-color: #0056b3; 
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -46,7 +46,7 @@
     <div class="container">
         <h1>Create a New Note</h1>
 
-        <form action="/notes" method="POST">
+        <form action="{{Route('store')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="title">Title</label>

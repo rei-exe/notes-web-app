@@ -12,13 +12,13 @@ class NoteController extends Controller
     public function showAllNotes()
     {
         $notes = Note::all(); # fetch notes from db
-        return view('xriber', ['notes' => $notes]); // return notes to view
+        return view('showallnotes', ['notes' => $notes]); // return notes to view
     }
 
     # create note
     public function Create()
     {
-        return view('create'); 
+        return view('create');
     }
 
     # save note
