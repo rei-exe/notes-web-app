@@ -8,16 +8,19 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-size: 60%;
-            background-image: url("/images/paper.png");
-            background-repeat: no-repeat;
-            background-position: center;
+            background-color: #bdae93;
             padding: 5px;
 
         }
+        
         .container{
             margin: 10%;
             height: 50%;
+            padding: 5px;
+            border-style: double;
+            background-blend-mode: lighten;
+            background-repeat: no-repeat;
+            background-image: linear-gradient(blue, pink)
         }
         h1 {
             font-size: 2.5rem; 
@@ -54,6 +57,9 @@
         }
         button:hover {
             background-color: darkblue; 
+        }
+        .btn-secondary:hover {
+            background-color: darkblue;
         }
         .btn-secondary {
             background-color: gray;
