@@ -81,6 +81,9 @@
             opacity: 20px;
             background-image: repeating-linear-gradient(30deg, yellow, blue);
         }
+        #btn:hover {
+            background-color:darkblue;
+        }
     </style>
 </head>
 <body>
@@ -97,9 +100,9 @@
         <p><strong>Updated at:</strong> {{ $note->updated_at }}</p>
 
         <div>
-            <a href="{{ url('/notes/' . $note->id . '/edit') }}" class="btn-edit">Edit</a>
-            <button class="btn-delete" onclick="document.getElementById('deleteModal').style.display='block'">Delete</button>
-            <a href="{{ url('/notes') }}" class="btn-secondary">Back to Notes</a>
+            <a href="{{ url('/notes/' . $note->id . '/edit') }}" class="btn-edit" id="btn">Edit</a>
+            <button class="btn-delete" onclick="document.getElementById('deleteModal').style.display='block'" id="btn">Delete</button>
+            <a href="{{ url('/notes') }}" class="btn-secondary" id="btn">Back to Notes</a>
         </div>
     </div>
 
