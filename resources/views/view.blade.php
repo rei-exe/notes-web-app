@@ -9,6 +9,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 20px;
+            background-image: linear-gradient( 180deg, rgba(90, 5, 8,19), rgba(8, 35, 40, 50)); */
         }
         h1 {
             font-size: 2.5rem; 
@@ -73,6 +74,12 @@
             color: black;
             text-decoration: none;
             cursor: pointer;
+        }
+        .container{
+            border-style: solid;
+            padding: 3%;
+            opacity: 20px;
+            background-image: repeating-linear-gradient(30deg, yellow, blue);
         }
     </style>
 </head>
