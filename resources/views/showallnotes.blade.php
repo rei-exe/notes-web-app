@@ -21,13 +21,13 @@
         </div>
 
         @if (session('success'))
-            <div class="alert alert-success">
+            <div class="alert-success">
                 {{session('success')}}
             </div>
         @endif
 
         @if ($notes->isEmpty())
-            <div class="alert alert-warning">
+            <div class="alert-warning">
                 No notes available
             </div>
         @endif
