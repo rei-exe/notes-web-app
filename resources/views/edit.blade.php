@@ -8,7 +8,7 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #bdae93;
+            background-color: #053607;
             padding: 5px;
 
         }
@@ -20,7 +20,7 @@
             border-style: double;
             background-blend-mode: lighten;
             background-repeat: no-repeat;
-            background-image: linear-gradient(blue, pink)
+            background-image: radial-gradient(at center, #213A57, #022915)
         }
         h1 {
             font-size: 2.5rem; 
