@@ -4,64 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Note</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin: 20px 0;
-        }
-        .form-group {
-            margin: 20px 0;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 20px;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Create a New Note</h1>
+    <link rel="stylesheet" href="{{asset('styles/create-notes.css')}}">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <form action="{{Route('showAllNotes')}}" method="GET">
+                    <button type="submit" class="arrow">
+                        <i class="arrow-left"></i>
+                    </button>
+                </form>
+                <h1>Create Xribe</h1>
+            </nav>
+        </header>
 
-        <form action="{{Route('store')}}" method="POST">
-            @csrf
-            <div class="form-group">
-                <label for="title">Title</label>
-                <input type="text" name="title" required>
+        <main>
+            <div class="container">
+                <form action="{{route('store')}}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="title"></label>
+                        <input type="text" name="title" placeholder="Title" class="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description"></label>
+                        <input type="text" name="description" class="description" placeholder="Description">
+                    </div>
+                    <div class="form-group">
+                        <label for="content"></label>
+                        <textarea name="content" class="content" placeholder="Insert Notes"></textarea>
+                    </div>
+                    <button type="submit" class="check-mark">✓</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="description">Description</label>
-                <input type="text" name="description">
-            </div>
-            <div class="form-group">
-                <label for="content">Content</label>
-                <textarea name="content" required></textarea>
-            </div>
-            <button type="submit">Create Note</button>
-        </form>
-    </div>
-</body>
-</html>
+        </main>
+
+        <script>
+            function autoResize(textarea) {
+                textarea.style.height = 'auto'; // Reset height to allow shrinking
+                textarea.style.height = textarea.scrollHeight + 'px'; // Set height to scrollHeight
+            }
+        </script>
+    </body>
+    </html>

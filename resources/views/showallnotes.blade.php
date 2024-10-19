@@ -34,10 +34,25 @@
 
         <div class="note-lists">
             @foreach ($notes as $note)
+
+            <div class="dropdown">
+                <button class="dropdown-button">...</button>
+                <div class="dropdown-content">
+                <form action="{{route('Edit', ['id' => $note->id])}}" method="GET">
+                    <button type="submit">Edit</button>
+                </form>
+                <form action="{{route('Delete', ['id' =>$note->id])}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                        <button type="submit">Delete</button>
+                </form>
+                </div>
+            </div>
+            
             <form action="{{Route('Read', ['id' => $note->id])}}" method="GET">
                 <button type="submit" class="note-lists-buttons">
                     <div class="title">{{$note->title}}</div>
-                    <div class="desc">{{ Str::limit($note->content, 72) }}</div>
+                    <div class="desc"><p>{{ Str::limit($note->content, 72) }}</p></div>
                 </button>
                 </form>
             @endforeach
