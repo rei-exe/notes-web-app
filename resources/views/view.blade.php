@@ -9,7 +9,8 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 20px;
-            background-image: linear-gradient( 180deg, rgba(90, 5, 8,19), rgba(8, 35, 40, 50)); */
+            background: rgba(8, 69, 58, 1.0);
+background: radial-gradient(at center, rgba(8, 69, 58, 1.0), rgba(23, 78, 7, 1.0));
         }
         h1 {
             font-size: 2.5rem; 
@@ -79,7 +80,7 @@
             border-style: solid;
             padding: 3%;
             opacity: 20px;
-            background-image: repeating-linear-gradient(30deg, yellow, blue);
+            background-image: linear-gradient(30deg, #0B6477, #259b9a);
         }
         #btn:hover {
             background-color:darkblue;
