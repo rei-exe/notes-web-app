@@ -8,10 +8,13 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-repeat: no-repeat;
+            background-color: #0B6477
         }
         h1 {
             font-size: 2.5rem;
             margin: 20px 0;
+            color: #213A57;
         }
         .form-group {
             margin: 20px 0;
