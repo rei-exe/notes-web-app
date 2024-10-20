@@ -63,14 +63,17 @@ class NoteController extends Controller
         $note = Note::findOrFail($id); # fetch note
         $note->update($request->all()); # update note
 
-        return redirect('/notes'); # redirects to landing page
+        return redirect()->route('Read', ['id' => $note->id])->with('success'); # redirects to landing page
     }
 
     # delete note
     public function Delete($id)
     {
         $note = Note::findOrFail($id); # fetch note
-        $note->delete(); # delete note
-        return redirect('/notes'); # redirects to landing page
+
+        if($note){
+            $note->delete(); # delete note
+        }
+        return redirect()->route('showAllNotes')->with('success'); # redirects to landing page
     }
 }
