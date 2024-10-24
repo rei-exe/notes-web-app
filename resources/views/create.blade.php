@@ -15,10 +15,12 @@
                     </button>
                 </form>
                 <h1>Create Xribe</h1>
-                <a class="Lmode" href="#" onclick="Lmode()"></a>
-                <a class="Dmode" href="#" onclick="Dmode()"></a>
-                <a class="Bmode" href="#" onclick="Bmode()"></a>
-                <a class="Ymode" href="#" onclick="Ymode()"></a>
+                <div class="change-color">
+                    <div class="lMode"></div>
+                    <div class="dMode"></div>
+                    <div class="bMode"></div>
+                    <div class="yMode"></div>
+                </div>
             </nav>
         </header>
 
@@ -43,32 +45,6 @@
             </div>
         </main>
 
-        <script>
-
-            function autoResize(textarea) {
-                textarea.style.height = 'auto'; // Reset height to allow shrinking
-                textarea.style.height = textarea.scrollHeight + 'px'; // Set height to scrollHeight
-            }
-            function Lmode(color){
-                document.querySelector("div").style.backgroundColor = "white";
-                document.querySelector("textarea").style.backgroundColor= "white";
-                document.querySelector("textarea").style.color= "black";
-            }
-            function Dmode(color){
-                document.querySelector("div").style.backgroundColor = "#222831";
-                document.querySelector("textarea").style.backgroundColor= "#1d1716";
-                document.querySelector("textarea").style.color= "green";
-            }
-            function Bmode(color){
-                document.querySelector("div").style.backgroundColor = "rgb(9, 49, 85)";
-                document.querySelector("textarea").style. backgroundColor= "#7fa99b";
-                document.querySelector("textarea").style.color= "black";
-            }
-            function Ymode(color){
-                document.querySelector("div").style.backgroundColor = "rgb(172, 170, 100)";
-                document.querySelector("textarea").style. backgroundColor= "#ffe79a";
-                document.querySelector("textarea").style.color= "black";
-            }
-        </script>
+        <script src="{{asset('js/create-note.js')}}"></script>
     </body>
     </html>

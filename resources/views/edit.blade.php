@@ -9,7 +9,7 @@
 <body>
     <header>
         <nav>
-            <form action="{{Route('showAllNotes')}}" method="GET">
+            <form action="{{Route('Read', ['id' => $note->id])}}" method="GET">
                 <button type="submit" class="arrow">
                     <i class="arrow-left"></i>
                 </button>
@@ -35,6 +35,7 @@
                         <label for="content"></label>
                         <textarea name="content" class="content" placeholder="Insert Notes">{{$note->content}}</textarea>
                 </div>
+                    
                     <button type="submit" class="check-mark">✓</button>
             </form>
         </div>
