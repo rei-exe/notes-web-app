@@ -34,8 +34,7 @@
                     <div class="form-group">
                         <label for="content"></label>
                         <textarea name="content" class="content" placeholder="Insert Notes">{{$note->content}}</textarea>
-                </div>
-                    
+                    </div>
                     <button type="submit" class="check-mark">✓</button>
             </form>
         </div>

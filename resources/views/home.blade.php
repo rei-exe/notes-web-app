@@ -18,11 +18,18 @@
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-280 360-480l200-200v400Z"/></svg>
                 </button>
             </li>
+            
             <li class="active">
                 <a href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
                     <span>Home</span>
                 </a>
+            </li>
+            <li>
+            <a href="http://127.0.0.1:8000/tasks">
+                <h1>✔</h1>
+                <span height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">Tasks</span>
+            </a>
             </li>
             <li>
                 <button onclick=toggleSubMenu(this) class="dropdown-btn">

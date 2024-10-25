@@ -42,6 +42,8 @@
             <div class="title">{{$note->title}}</div>
             <div class="description">{{$note->description}}</div>
             <div class="content"><p>{{$note->content}}</p></div>
+            <div class="wordcount"><b>Word Count:</b> {{str_word_count($note->content)}}
+            <div class="created"><b>Date Created:</b> {{$note->created_at}}</div>
         </div>
     </main>
     <script src="{{asset('js/viewnote.js')}}"> </script>

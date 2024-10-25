@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #3e4a61;
         }
         header {
             background-color: #4CAF50;
@@ -20,9 +20,10 @@
         }
         main {
             margin-top: 20px;
-            background: white;
+            background: #222831;
             padding: 20px;
             border-radius: 5px;
+            color: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         button {
@@ -35,6 +36,15 @@
         }
         button:hover {
             background-color: #45a049;
+        }
+        form{
+            display: inline;
+        }
+        .radio{
+            border: solid;
+            width: 11%;
+            margin: 5px;
+            padding: 10px;
         }
     </style>
 </head>
@@ -54,6 +64,7 @@
             @csrf
             @method('PUT')
             <p>Task: {{ $task->task }}</p>
+            <div class="radio">
             <label>
                 <input type="radio" name="status" value="completed" {{ $task->status === 'completed' ? 'checked' : '' }}>
                 Completed
@@ -62,8 +73,17 @@
                 <input type="radio" name="status" value="pending" {{ $task->status === 'pending' ? 'checked' : '' }}>
                 Pending
             </label>
+            </div>
             <button type="submit">Update Status</button>
         </form>
+        <form action="{{ route('task-delete', $task->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
     </main>
+    <script>
+
+    </script>
 </body>
 </html>

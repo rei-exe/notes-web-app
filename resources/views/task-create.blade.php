@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #3e4a61;
         }
         header {
             background-color: #4CAF50;
@@ -20,7 +20,8 @@
         }
         main {
             margin-top: 20px;
-            background: white;
+            background: #222831;
+            color: white;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
