@@ -1,3 +1,15 @@
+//for container and text area when resizing
+document.addEventListener('DOMContentLoaded', function () {
+    const content = document.getElementById('textArea');
+    const container = document.getElementById('containerTextArea');
+
+    content.addEventListener('input', function () {
+        this.style.height = 'auto'; // Reset height
+        this.style.height = `${this.scrollHeight}px`; // Set height to scroll height
+        container.style.height = `${this.scrollHeight + 20}px`; // Adjust container height
+    });
+});
+
 //getter and setter for color modes with cookies
 function setCookie(name, value, days){
     const date = new Date();

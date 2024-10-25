@@ -27,7 +27,7 @@ Route::get('/notes/{id}/edit', [NoteController::class, 'Edit'])->name('Edit');
 Route::put('/notes/{id}', [NoteController::class, 'Update'])->name('Update');
 
 #this will delete the data from the database
-Route::delete('/notes/{id}/', [NoteController::class, 'Delete'])->name('Delete');
+Route::delete('/notes/{id}/delete', [NoteController::class, 'Delete'])->name('Delete');
 
 Route::get('/tasks', [TaskController::class, 'showTasks'])->name('showTasks');
 Route::get('/tasks/create', [TaskController::class, 'create'])->name('task-create');

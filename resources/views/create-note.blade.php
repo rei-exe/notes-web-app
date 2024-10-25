@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{$note->title}}</title>
+    <title>Create Xribe</title>
     <link rel="stylesheet" href="{{asset('styles/home.css')}}">
     <link rel="icon" href="{{asset('icons/menu_book_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png')}}">
-    <script type="text/javascript" src="{{asset('js/home.js')}}" defer>colorMode()</script>
 </head>
 <body>
     <nav id="sidebar">
@@ -25,25 +24,10 @@
                 </a>
             </li>
             <li>
-                <button onclick=toggleSubMenu(this) class="dropdown-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
-                    <span>Options</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-200 240-440l56-56 184 183 184-183 56 56-240 240Zm0-240L240-680l56-56 184 183 184-183 56 56-240 240Z"/></svg>
-                </button>
-                <ul class="sub-menu">
-                    <div>
-                        <li class=>
-                            <a href="{{Route('Edit', ['id' => $note->id])}}">Edit</a>
-                        </li>
-                        <li>
-                            <form id="delete-form-{{ $note->id }}" action="{{Route('Delete', ['id' => $note->id])}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <a href="javascript:void(0);" onclick="if(confirm('Are you sure you want to delete this note?')) { document.getElementById('delete-form-{{ $note->id }}').submit(); }">Delete</a>
-                            </form>
-                        </li>
-                    </div>
-                </ul>
+                <a href="{{Route('showAllNotes')}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M400-240 160-480l240-240 56 58-142 142h486v80H314l142 142-56 58Z"/></svg>
+                    <span>Go Back</span>
+                </a>
             </li>
             <li>
                 <button onclick=toggleSubMenu(this) class="dropdown-btn">
@@ -78,19 +62,26 @@
         </ul>
     </nav>
     <main>
-        <div class="container">
-            <h2 class="title">{{ $note->title }}</h2>
-            <p class="desc">{{ $note->description }}</p>
-            <p class="content">{{ $note->content }}</p>
-            </form>
-        </div>
+        <form action="{{route('store')}}" method="POST">
+            @csrf
+            <div class="container">
+                <label for="title"></label>
+                <input type="text" name="title" class="title-input" placeholder="Title">
+            </div>
+            <div class="container">
+                <label for="desc"></label>
+                <input type="text" name="desc" class="desc-input" placeholder="Description">
+            </div>
+            <div class="container" id="containerTextArea">
+                <label for="content"></label>
+                <textarea name="content" id="textArea" class="content-input" contenteditable="true" placeholder="Insert Notes"></textarea>
+            </div>
 
-
-        <form action="{{Route('Create')}}" method="GET">
             <button type="submit" class="create-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-80v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-300L683-80H560Zm300-263-37-37 37 37ZM620-140h38l121-122-18-19-19-18-122 121v38ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v120h-80v-80H520v-200H240v640h240v80H240Zm280-400Zm241 199-19-18 37 37-18-19Z"/></svg>
             </button>
         </form>
     </main>
+    <script type="text/javascript" src="{{asset('js/home.js')}}" defer>colorMode()</script>
 </body>
 </html>

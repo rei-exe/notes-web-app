@@ -19,6 +19,7 @@ html{
     font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5rem;
     scroll-behavior: smooth;
+
 }
 
 body{
@@ -205,6 +206,54 @@ main p{
     border-radius: 1em;
     margin-bottom: 20px;
     padding: min(3em, 15%);
+
+    >.title, .desc, .content{
+        margin: 10px 0;
+        padding: 10px 0;
+        max-width: 100%;
+
+        overflow-x: hidden;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        white-space: pre-line;
+    }
+    .title-input, .desc-input, textarea{
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+        padding: 10px;
+        background-color: transparent;
+        border: none;
+        font-family: inherit;
+
+        outline: none;
+        box-sizing: border-box;
+    }
+
+    .title-input{
+        padding: 1px;
+        margin: 1px;
+        font-size: 1.5em;
+        color: inherit;
+        font-weight: 700;
+    }
+    .desc-input{
+        padding: 1px 0;
+        margin: 1px;
+        font-size: 1em;
+        color: var(--secondary-text-clr);
+        font-weight: 400;
+    }
+
+    textarea{
+        padding: 1px 0;
+        margin: 1px;
+        height: 200px;
+        resize: none;
+        overflow: hidden;
+        color: var(--secondary-text-clr);
+    }
+
 }
 .container:hover{
     background-color: var(--hover-clr);

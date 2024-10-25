@@ -38,17 +38,20 @@
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-200 240-440l56-56 184 183 184-183 56 56-240 240Zm0-240L240-680l56-56 184 183 184-183 56 56-240 240Z"/></svg>
                 </button>
                 <ul class="sub-menu">
-
-                        <div>
-                            @foreach ($notes as $note)
-                            <li class="note-item">
-                                <a href="#note-{{ $note->id }}">{{$note->title}}</a>
-                            </li>
-                            @endforeach
-                        </div>       {{-- <button type="submit" id="note-btn">
-                                    <h2 class="title">{{$note->title}}</h2>
-                                </button> --}}
-
+                    <div>
+                        @if ($notes->isEmpty())
+                        <li>
+                            <a href="#" class="alert-warning">Please put a Note</a>
+                        </li>
+                    </div>
+                        @endif
+                    <div>
+                        @foreach ($notes as $note)
+                        <li class="note-item">
+                            <a href="#note-{{ $note->id }}">{{$note->title}}</a>
+                        </li>
+                        @endforeach
+                    </div>
                 </ul>
             </li>
             <li>
@@ -99,7 +102,6 @@
                     <button type="submit" id="note-btn">
                         <h2 class="title">{{ $note->title }}</h2>
                         <p class="desc">{{ $note->description }}</p>
-                        <p class="content">{{ $note->content }}</p>
                     </button>
                 </form>
             </div>
