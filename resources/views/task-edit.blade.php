@@ -69,6 +69,7 @@
                 <input type="radio" name="status" value="completed" {{ $task->status === 'completed' ? 'checked' : '' }}>
                 Completed
             </label>
+            <hr>
             <label>
                 <input type="radio" name="status" value="pending" {{ $task->status === 'pending' ? 'checked' : '' }}>
                 Pending
