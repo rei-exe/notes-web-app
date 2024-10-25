@@ -18,17 +18,10 @@
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-280 360-480l200-200v400Z"/></svg>
                 </button>
             </li>
-
             <li class="active">
-                <a href="#">
+                <a href="{{Route('showAllNotes')}}">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg>
                     <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://127.0.0.1:8000/tasks">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>
-                    <span>Tasks</span>
                 </a>
             </li>
             <li>
@@ -40,11 +33,9 @@
                 <ul class="sub-menu">
 
                         <div>
-                            @foreach ($notes as $note)
                             <li class="note-item">
-                                <a href="#note-{{ $note->id }}">{{$note->title}}</a>
+                                <a href="#note-{{ $note->id }}"></a>
                             </li>
-                            @endforeach
                         </div>       {{-- <button type="submit" id="note-btn">
                                     <h2 class="title">{{$note->title}}</h2>
                                 </button> --}}
@@ -84,26 +75,13 @@
         </ul>
     </nav>
     <main>
+        <div class="container">
+            <h2 class="title">{{ $note->title }}</h2>
+             <p class="desc">{{ $note->description }}</p>
+            <p class="content">{{ $note->content }}</p>
+            </form>
+        </div>
 
-        @if (session('success'))
-            <p class="alert-success">{{session('success')}}</p>
-        @endif
-
-        @if ($notes->isEmpty())
-            <p class="alert-warning">Xribe now so you won't forget</p>
-        @endif
-
-        @foreach ($notes as $note)
-            <div class="container" id="note-{{ $note->id }}">
-                <form action="{{Route('Read', ['id' => $note->id])}}">
-                    <button type="submit" id="note-btn">
-                        <h2 class="title">{{ $note->title }}</h2>
-                        <p class="desc">{{ $note->description }}</p>
-                        <p class="content">{{ $note->content }}</p>
-                    </button>
-                </form>
-            </div>
-        @endforeach
 
         <form action="{{Route('Create')}}" method="GET">
             <button type="submit" class="create-btn">
