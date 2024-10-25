@@ -41,7 +41,7 @@
                     <div>
                         @if ($notes->isEmpty())
                         <li>
-                            <a href="#" class="alert-warning">Please put a Note</a>
+                            <a href="#" class="alert-warning">Start making a notes!</a>
                         </li>
                     </div>
                         @endif

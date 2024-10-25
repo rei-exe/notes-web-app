@@ -47,7 +47,7 @@ class NoteController extends Controller
     public function Edit($id)
     {
         $note = Note::findOrFail($id); # fetch for editing
-        return view('edit', ['note' => $note]); # return edit view
+        return view('edit-chosen-note', ['note' => $note]); # return edit view
     }
 
     # save edited note

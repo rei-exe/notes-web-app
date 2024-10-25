@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{$note->title}}</title>
+    <title>Create Xribe</title>
     <link rel="stylesheet" href="{{asset('styles/home.css')}}">
     <link rel="icon" href="{{asset('icons/menu_book_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png')}}">
-    <script type="text/javascript" src="{{asset('js/home.js')}}" defer>colorMode()</script>
 </head>
 <body>
     <nav id="sidebar">
@@ -25,25 +24,10 @@
                 </a>
             </li>
             <li>
-                <button onclick=toggleSubMenu(this) class="dropdown-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z"/></svg>
-                    <span>Options</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-200 240-440l56-56 184 183 184-183 56 56-240 240Zm0-240L240-680l56-56 184 183 184-183 56 56-240 240Z"/></svg>
-                </button>
-                <ul class="sub-menu">
-                    <div>
-                        <li class=>
-                            <a href="{{Route('Edit', ['id' => $note->id])}}">Edit</a>
-                        </li>
-                        <li>
-                            <form id="delete-form-{{ $note->id }}" action="{{Route('Delete', ['id' => $note->id])}}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <a href="javascript:void(0);" onclick="if(confirm('Are you sure you want to delete this note?')) { document.getElementById('delete-form-{{ $note->id }}').submit(); }">Delete</a>
-                            </form>
-                        </li>
-                    </div>
-                </ul>
+                <a href="{{Route('Read', ['id' => $note->id])}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M400-240 160-480l240-240 56 58-142 142h486v80H314l142 142-56 58Z"/></svg>
+                    <span>Go Back</span>
+                </a>
             </li>
             <li>
                 <button onclick=toggleSubMenu(this) class="dropdown-btn">
@@ -78,16 +62,27 @@
         </ul>
     </nav>
     <main>
-        <div class="container">
-            <h2 class="title">{{ $note->title }}</h2>
-            <p class="desc">{{ $note->description }}</p>
-            <p class="content">{{ $note->content }}</p>
-        </div>
+        <form action="{{route('Update', ['id' => $note->id])}}" method="POST">
+            @csrf
+            @method('PUT')
+            <div class="container">
+                <label for="title"></label>
+                <input value="{{$note->title}}" name="title" class="title-input" placeholder="Title">
+            </div>
+            <div class="container">
+                <label for="desc"></label>
+                <input value="{{$note->description}}" name="description" class="desc-input" placeholder="Description">
+            </div>
+            <div class="container" id="containerTextArea">
+                <label for="content"></label>
+                <textarea name="content" id="textArea" class="content-input" contenteditable="true" placeholder="Insert Notes">{{$note->content}}</textarea>
+            </div>
 
-        <div class="container">
-            <p>Word Count: {{str_word_count($note->content)}}</p>
-            <p>Date Created: {{$note->created_at}}</p>
-        </div>
+            <button type="submit" class="create-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-80v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8 9 12.5 20t4.5 22q0 11-4 22.5T903-300L683-80H560Zm300-263-37-37 37 37ZM620-140h38l121-122-18-19-19-18-122 121v38ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v120h-80v-80H520v-200H240v640h240v80H240Zm280-400Zm241 199-19-18 37 37-18-19Z"/></svg>
+            </button>
+        </form>
     </main>
+    <script type="text/javascript" src="{{asset('js/home.js')}}" defer>colorMode()</script>
 </body>
 </html>

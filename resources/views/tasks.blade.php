@@ -28,7 +28,7 @@
         h2 {
             color: #333;
         }
-        
+
         form {
             display: inline;
             margin-right: 10px;
@@ -83,7 +83,7 @@
 <body>
     <header>
         <nav>
-            <h1>Xriber - Task Tracker</h1>
+            <h1>Xriber - Task Tracker(Beta Testing)</h1>
             <form action="{{ route('task-create') }}" method="GET">
                 <button type="submit">Create New Task</button>
             </form>
@@ -105,7 +105,7 @@
                         <button type="submit"><p><b>{{ $task->task }}</b> - <h7><i>Status: {{ $task->status }}</i></h7></p></button>
                     </form>
                 </div>
-    
+
             @endforeach
         @endif
 
