@@ -11,12 +11,16 @@
             margin: 0;
             padding: 20px;
             background-color: #3e4a61;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center the main section */
         }
         header {
-            background-color: #4CAF50;
+            background-color: #222831;
             color: white;
             padding: 10px 20px;
             text-align: center;
+            width: 100%; /* Full width */
         }
         main {
             margin-top: 20px;
@@ -25,6 +29,9 @@
             border-radius: 5px;
             color: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Full width */
+            max-width: 400px; /* Set a max width for the main container */
+            text-align: center; /* Center text inside */
         }
         button {
             padding: 10px 15px;
@@ -33,18 +40,22 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            margin: 5px; /* Add margin for spacing */
         }
         button:hover {
             background-color: #45a049;
         }
-        form{
-            display: inline;
+        .radio {
+            margin: 10px 0; /* Margin for spacing */
+            text-align: center; /* Center the radio options */
         }
-        .radio{
-            border: solid;
-            width: 11%;
-            margin: 5px;
-            padding: 10px;
+        .radio label {
+            display: block; /* Stack labels vertically */
+            margin: 5px 0; /* Add space between options */
+        }
+        .button-group {
+            display: flex; /* Use flexbox to arrange buttons side by side */
+            justify-content: center; /* Center the buttons */
         }
     </style>
 </head>
@@ -65,26 +76,24 @@
             @method('PUT')
             <p>Task: {{ $task->task }}</p>
             <div class="radio">
-            <label>
-                <input type="radio" name="status" value="completed" {{ $task->status === 'completed' ? 'checked' : '' }}>
-                Completed
-            </label>
-            <hr>
-            <label>
-                <input type="radio" name="status" value="pending" {{ $task->status === 'pending' ? 'checked' : '' }}>
-                Pending
-            </label>
+                <label>
+                    <input type="radio" name="status" value="completed" {{ $task->status === 'completed' ? 'checked' : '' }}>
+                    Completed
+                </label>
+                <label>
+                    <input type="radio" name="status" value="pending" {{ $task->status === 'pending' ? 'checked' : '' }}>
+                    Pending
+                </label>
             </div>
-            <button type="submit">Update Status</button>
+            <div class="button-group">
+                <button type="submit">Update Status</button>
+                <form action="{{ route('task-delete', $task->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="delete-button">Delete</button>
+                </form>
+            </div>
         </form>
-        <form action="{{ route('task-delete', $task->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="delete-button">Delete</button>
-                    </form>
     </main>
-    <script>
-
-    </script>
 </body>
 </html>
