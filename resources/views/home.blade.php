@@ -54,7 +54,7 @@
                     <div>
                         <li><a href="https://www.facebook.com/duriga.vince123" target="_blank">Vincent Lee Duriga</a></li>
                         <li><a href="https://www.facebook.com/jimmy.lumaad.3" target="_blank">Jimmy Lumaad</a></li>
-                        <li><a href="https://www.facebook.com/raaaaaasel" target="_blank">John Russel Regalado</a></li>
+                        <li><a href="https://www.facebook.com/sleepyrel" target="_blank">John Russel Regalado</a></li>
                     </div>
                 </ul>
             </li>

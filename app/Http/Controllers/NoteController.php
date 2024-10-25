@@ -40,14 +40,14 @@ class NoteController extends Controller
     public function Read($id)
     {
         $note = Note::findOrFail($id); # fetch notes
-        return view('view', compact('note')); # return a note
+        return view('view', ['note' => $note]); # return a note
     }
 
     # edit note
     public function Edit($id)
     {
         $note = Note::findOrFail($id); # fetch for editing
-        return view('edit', compact('note')); # return edit view
+        return view('edit', ['note' => $note]); # return edit view
     }
 
     # save edited note
