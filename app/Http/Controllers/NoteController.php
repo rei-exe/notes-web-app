@@ -18,7 +18,7 @@ class NoteController extends Controller
     # create note
     public function Create()
     {
-        return view('create-note    ');
+        return view('create-note');
     }
 
     # save note

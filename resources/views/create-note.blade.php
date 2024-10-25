@@ -70,7 +70,7 @@
             </div>
             <div class="container">
                 <label for="desc"></label>
-                <input type="text" name="desc" class="desc-input" placeholder="Description">
+                <input type="text" name="description" class="desc-input" placeholder="Description">
             </div>
             <div class="container" id="containerTextArea">
                 <label for="content"></label>
