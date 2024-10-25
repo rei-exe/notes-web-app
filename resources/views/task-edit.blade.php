@@ -13,14 +13,14 @@
             background-color: #3e4a61;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center the main section */
+            align-items: center;
         }
         header {
             background-color: #222831;
             color: white;
             padding: 10px 20px;
             text-align: center;
-            width: 100%; /* Full width */
+            width: 100%;
         }
         main {
             margin-top: 20px;
@@ -29,9 +29,9 @@
             border-radius: 5px;
             color: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 100%; /* Full width */
-            max-width: 400px; /* Set a max width for the main container */
-            text-align: center; /* Center text inside */
+            width: 100%;
+            max-width: 400px; 
+            text-align: center; 
         }
         button {
             padding: 10px 15px;
@@ -40,22 +40,22 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            margin: 5px; /* Add margin for spacing */
+            margin: 5px; 
         }
         button:hover {
             background-color: #45a049;
         }
         .radio {
-            margin: 10px 0; /* Margin for spacing */
-            text-align: center; /* Center the radio options */
+            margin: 10px 0; 
+            text-align: center; 
         }
         .radio label {
-            display: block; /* Stack labels vertically */
-            margin: 5px 0; /* Add space between options */
+            display: block; 
+            margin: 5px 0;
         }
         .button-group {
-            display: flex; /* Use flexbox to arrange buttons side by side */
-            justify-content: center; /* Center the buttons */
+            display: flex; 
+            justify-content: center;
         }
     </style>
 </head>

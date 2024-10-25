@@ -59,7 +59,7 @@
        }
        main button{
         width: 100%;
-        max-width: 95vw; /* Limits the width */
+        max-width: 95vw;
         height: 80px;
         padding: 15px;
         margin: 10px 0 10px 0;
