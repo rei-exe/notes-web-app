@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('containerTextArea');
 
     content.addEventListener('input', function () {
-        this.style.height = 'auto'; // Reset height
-        this.style.height = `${this.scrollHeight}px`; // Set height to scroll height
-        container.style.height = `${this.scrollHeight + 20}px`; // Adjust container height
+        this.style.height = 'auto';
+        this.style.height = `${this.scrollHeight}px`;
+        container.style.height = `${this.scrollHeight + 20}px`; 
     });
 });
 
